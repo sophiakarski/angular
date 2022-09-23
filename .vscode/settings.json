@@ -1,0 +1,9 @@
+{
+    "liveServer.settings.port": 5501,
+    "git.smartCommitChanges": "all",
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.closeDiffOnOperation": false,
+    "git.enableSmartCommit": false,
+    "git-graph.repository.sign.tags": true,
+    "git.suggestSmartCommit": true
+}
