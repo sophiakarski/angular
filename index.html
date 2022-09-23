@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <!-- hook up app.js name -->
 <!-- ng = angular -->
-<html ng-app="myFirstApp">
+<html ng-app="NameCalculator">
   <head>
     <meta charset="utf-8">
     
     <!-- referencing two files in html file (angular comes before app) -->
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <style>body { font-size: 1.1em; }</style>
 
-    <title>My first AngularJS App</title>
+    <title>Calculator</title>
   </head>
 
-  <body>
-    <h1>My first AngularJS App!</h1>
-    <!-- bind to View -->
-    <div ng-controller="MyFirstController">
-      {{sayHello()}}
-
-      <input type="text" ng-model="name">
-      Inside my input is: {{name}}
+  <!-- bind Module App to Body -->
+  <body ng-app="NameCalculator">
+    <h1>Name Calculator</h1>
+    <!-- bind Controller to View -->
+    <div ng-controller="NameCalculatorController">
+      <div>
+        Your name:
+        <!-- EXAMPLE: -->
+        <!-- {{sayHello()}} -->
+      <input type="text"
+        ng-model="name"
+        ng-keyup="displayNumeric();">
+      <!-- Inside my input is: {{name}} -->
+      </div>
+      <div>Total Numeric value of person's name is: {{totalValue}}
+        <!-- {{name}} </div> -->
     </div>
   </body>
 

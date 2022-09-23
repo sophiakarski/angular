@@ -6,22 +6,39 @@
 // enable certain things to PROTECT us from making mistakes
 'use strict';
 
-// [] = dependencies
+// [] = dependencies (if none, empty array)
 // must bind 'myFirstApp' module (AngularJS app) to .html
 
-angular.module('myFirstApp', [])
+angular.module('NameCalculator', [])
 
 // the way we define our ViewModel of View
 // Name of ViewModel/Controller, and takes function that defines functionallity of Controller
 // Now, bind this to View
 
 // CONTROLLER = VIEWMODEL
-.controller('MyFirstController', function ($scope) {
-$scope.name = "Sophia";
+.controller('NameCalculatorController', function ($scope) {
+$scope.name = "";
+$scope.totalValue = 0;
 
-$scope.sayHello = function () {
-    return "Hello Coursera!";
+// EXAMPLE:
+// $scope.sayHello = function () {
+//     return "Hello Coursera!";
+// };
+
+$scope.displayNumeric = function () {
+    var totalNameValue = calculateNumericForString($scope.name); // get total value
+    $scope.totalValue = totalNameValue;
 };
+
+// function to calculate numeric value
+
+function calculateNumericForString(string) {
+    var totalStringValue = 0;
+    for (var i = 0; i < string.length; i++) {
+        totalStringValue += string.charCodeAt(i)
+    }
+    return totalStringValue
+}
 
 });
 
