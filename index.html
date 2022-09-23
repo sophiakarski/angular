@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello Coursera</title>
-    </head>
-    <body>
-        <h1>
-            Hi Coursera! My first Angular project.
-        </h1>
-    </body>
+<!-- hook up app.js name -->
+<!-- ng = angular -->
+<html ng-app="myFirstApp">
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- referencing two files in html file (angular comes before app) -->
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <title>My first AngularJS App</title>
+  </head>
+
+  <body>
+    <h1>My first AngularJS App!</h1>
+    <!-- bind to View -->
+    <div ng-controller="MyFirstController">
+      {{sayHello()}}
+
+      <input type="text" ng-model="name">
+      Inside my input is: {{name}}
+    </div>
+  </body>
+
 </html>
